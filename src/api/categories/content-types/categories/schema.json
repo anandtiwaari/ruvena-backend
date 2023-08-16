@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoriess",
+  "info": {
+    "singularName": "categories",
+    "pluralName": "categoriess",
+    "displayName": "categories"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "categoryname": {
+      "type": "string",
+      "unique": true
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blogs.blogs",
+      "inversedBy": "categories"
+    }
+  }
+}

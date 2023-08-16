@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogss",
+  "info": {
+    "singularName": "blogs",
+    "pluralName": "blogss",
+    "displayName": "blogs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blogtitle": {
+      "type": "string",
+      "unique": true
+    },
+    "blogcontent": {
+      "type": "richtext"
+    },
+    "featuredimage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categories.categories",
+      "mappedBy": "blogs"
+    }
+  }
+}
